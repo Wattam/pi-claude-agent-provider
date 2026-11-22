@@ -1,0 +1,52 @@
+{
+    "name": "pi-claude-agent-provider",
+    "version": "0.1.0",
+    "description": "Use Claude Code as a model provider for Pi.",
+    "type": "module",
+    "main": "./index.ts",
+    "license": "0BSD AND MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Wattam/pi-claude-agent-provider.git"
+    },
+    "keywords": [
+        "pi-package"
+    ],
+    "engines": {
+        "node": ">=22.19.0"
+    },
+    "files": [
+        "index.ts",
+        "src/",
+        "THIRD_PARTY_NOTICES.md"
+    ],
+    "pi": {
+        "extensions": [
+            "./index.ts"
+        ]
+    },
+    "dependencies": {
+        "@anthropic-ai/claude-agent-sdk": "0.3.329",
+        "@modelcontextprotocol/sdk": "1.32.2",
+        "zod": "4.6.7"
+    },
+    "peerDependencies": {
+        "@earendil-works/pi-agent-core": "*",
+        "@earendil-works/pi-ai": "*",
+        "@earendil-works/pi-coding-agent": "*",
+        "typebox": "*"
+    },
+    "devDependencies": {
+        "@anthropic-ai/sdk": "1.11.0",
+        "@types/node": "22.19.21",
+        "typescript": "5.8.2"
+    },
+    "scripts": {
+        "link:host": "node scripts/link-host.mjs",
+        "typecheck": "tsc -p tsconfig.json --noEmit",
+        "build:test": "tsc -p tsconfig.test.json",
+        "test": "npm run build:test && node scripts/run-tests.mjs all",
+        "test:unit": "npm run build:test && node scripts/run-tests.mjs unit",
+        "test:integration": "npm run build:test && node scripts/run-tests.mjs integration"
+    }
+}

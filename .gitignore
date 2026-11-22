@@ -1,0 +1,6 @@
+# folders at any depth
+node_modules/
+dist-test/
+
+# files by name
+*.tgz
