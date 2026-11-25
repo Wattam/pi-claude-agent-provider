@@ -5,7 +5,7 @@ Registers the Pi provider `claude-agent` (display name `Claude Agent`, API id `c
 ## Requirements
 
 - Linux. The provider does not register on other operating systems. macOS support is unverified.
-- Claude Code (`claude`) 2.1.317 or later on `PATH`. The provider blocks a Pi tool call whose `PreToolUse` hook callback failed, which needs that release. Verified against Pi 1.6.0, Claude Code 2.1.329, and Agent SDK 0.3.329.
+- Claude Code (`claude`) 2.1.317 or later on `PATH`. The provider blocks a Pi tool call whose `PreToolUse` hook callback failed, which needs that release. Verified against Pi 1.6.1, Claude Code 2.1.332, and Agent SDK 0.3.332.
 - Claude Code logged in with the Claude subscription login: `claude auth login`.
 - Node.js 22.19.0 or later.
 

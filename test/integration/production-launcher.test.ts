@@ -25,10 +25,10 @@ test("first message and continuation work through the production process launche
         }),
     });
     const first = await chat.ask("First message");
-    assert.equal(first.message.stopReason, "stop", first.message.errorMessage);
+    assert.equal(first.message.stopReason, "stop", first.message.errorMessage ?? "First message did not finish");
     assert.equal(textOf(first.message), "ok");
     const second = await chat.ask("Continue");
-    assert.equal(second.message.stopReason, "stop", second.message.errorMessage);
+    assert.equal(second.message.stopReason, "stop", second.message.errorMessage ?? "Continuation did not finish");
     assert.equal(textOf(second.message), "ok");
     assert.equal(host.records.length, 2);
     assert.equal(host.records[0].claudeSessionId, host.records[1].claudeSessionId);
